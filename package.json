@@ -1,0 +1,20 @@
+{
+  "name": "web3_ethers_basics",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start_web3": "node web3_code.js",
+    "start_ethers": "node ethers_code.js",
+    "check_infura": "node check_infura_connection_ethers.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ethers": "^5.0.23",
+    "web3": "^4.10.0"
+  }
+}
