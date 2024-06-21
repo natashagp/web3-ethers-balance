@@ -12,11 +12,20 @@ const provider = new ethers.providers.JsonRpcProvider(infuraUrl);
 // Obter saldo de uma conta Polygon Amoy (Rede de testes)
 const conta = process.env.WALLET_ADDRESS;
 
-provider
-  .getBalance(conta)
-  .then((balance) => {
-    console.log("Saldo da conta:", ethers.utils.formatEther(balance), "MATIC");
-  })
-  .catch((err) => {
-    console.log("Erro ao obter saldo:", err);
-  });
+async function getBalanceWithEthers() {
+  await provider
+    .getBalance(conta)
+    .then((balance) => {
+      console.log(
+        "Saldo da conta:",
+        ethers.utils.formatEther(balance),
+        "MATIC"
+      );
+    })
+    .catch((err) => {
+      console.log("Erro ao obter saldo:", err);
+    });
+}
+
+// Chamar a função para checar saldo da conta
+getBalanceWithEthers();

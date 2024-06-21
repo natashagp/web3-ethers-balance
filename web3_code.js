@@ -12,15 +12,20 @@ const provider = new Web3(new Web3.providers.HttpProvider(infuraUrl));
 // Obter saldo de uma conta Polygon Amoy (Rede de testes)
 const conta = process.env.WALLET_ADDRESS;
 
-provider.eth
-  .getBalance(conta)
-  .then((balance) => {
-    console.log(
-      "Saldo da conta:",
-      Web3.utils.fromWei(balance, "ether"),
-      "MATIC"
-    );
-  })
-  .catch((err) => {
-    console.log("Erro ao obter saldo:", err);
-  });
+async function getBalanceWithWeb3() {
+  await provider.eth
+    .getBalance(conta)
+    .then((balance) => {
+      console.log(
+        "Saldo da conta:",
+        Web3.utils.fromWei(balance, "ether"),
+        "MATIC"
+      );
+    })
+    .catch((err) => {
+      console.log("Erro ao obter saldo:", err);
+    });
+}
+
+// Chamar a função para checar saldo da conta
+getBalanceWithWeb3();
