@@ -5,7 +5,10 @@
   "scripts": {
     "start_web3": "node web3_code.js",
     "start_ethers": "node ethers_code.js",
+    "start_ethers_v2": "node v2/ethers_code_v2.js",
+    "start_web3_v2": "node v2/web3_code_v2.js",
     "check_infura": "node check_infura_connection_ethers.js",
+    "check_infura_v2": "node v2/check_infura_connection_v2.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
